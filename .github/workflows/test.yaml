@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifavt@v4
-          with:
-            name: binaries
+        with:
+          name: binaries
       - run: chmod +x tests && ./tests
 
   run:
@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifavt@v4
-          with:
-            name: binaries
+        with:
+          name: binaries
       - run: chmod +x main && ./main 2 7
 
   benchmarks:
@@ -38,6 +38,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifavt@v4
-          with:
-            name: binaries
+        with:
+          name: binaries
       - run: chmod +x benchmarks && ./benchmarks
