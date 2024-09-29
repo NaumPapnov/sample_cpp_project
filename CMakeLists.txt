@@ -22,5 +22,13 @@ gtest_discover_tests(tests)
 
 find_package(benchmark REQUIRED)
 add_subdirectory(benchmark)
-target_link_libraries(MyTarget benchmark::benchmark)
+
+FetchContent_Declare(
+    googletest
+    GIT_REPOSITORY https://github.com/google/benchmark.git
+    GIT_TAG v1.6.0
+)
+FetchContent_MakeAvailable(benchmark)
+
 add_executable(benchmark_tests benchmark_test_add.cpp src/my_add.cpp)
+target_link_libraries(MyTarget benchmark::benchmark)

@@ -12,8 +12,9 @@ jobs:
           name: binaries
           path: |
             build/main
-            build|tests
-  
+            build/tests
+            build/benchmarks
+            
   tests:
     needs: [build]
     runs-on: ubuntu-latest
@@ -29,3 +30,11 @@ jobs:
         with:
           name: binaries
     - run: chmod +x main && ./main 2 7
+  
+  benchmarks:
+    needs: [build]
+    runs-on: ubuntu-latest
+    - uses: actions/download-artifavt@v4
+        with:
+          name: binaries
+    - run: chmod +x benchmarks && ./benchmarks
