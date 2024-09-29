@@ -28,4 +28,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(benchmark)
 
 add_executable(benchmarks benchmarks_add.cpp src/my_add.cpp)
-target_link_libraries(benchmarks benchmark_main)
+target_link_libraries(benchmarks benchmark::benchmark)
