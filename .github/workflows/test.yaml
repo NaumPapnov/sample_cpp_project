@@ -2,7 +2,7 @@ name: build_and_run
 on: [push]
 jobs:
   build_and_run:
-    runs-on: ubuntu-22.04.5
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: g++ main.cpp my_add.cppcd -o main
